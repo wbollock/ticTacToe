@@ -156,7 +156,7 @@ do
      
     if [ "${board[$1]}" != "." ]  && [ "${board[$1]}" == "${board[$2]}" ] && [ "${board[$2]}" == "${board[$3]}" ];then
     echo "Game over!"
-    echo "Also hers 1 ${board[$1]} and 2 ${board[$2]} and 3 ${board[$3]}"
+    echo "Also heres 1 ${board[$1]} and 2 ${board[$2]} and 3 ${board[$3]}"
     fi
 
 done
