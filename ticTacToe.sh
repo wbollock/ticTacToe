@@ -1,12 +1,20 @@
 #!/bin/bash
 # Tic Tac Toe by Will Bollock
 function displayBoard {
-    for (( i=1; i<${boardlength}+1; i++ ));
-    do
-        printf "${board[$i-1]}" && printf "${board[$i]}" && echo "${board[$i+1]}"
-        i=$i+2
-    done
+    
+    # for (( i=1; i<${boardlength}+1; i++ ));
+    #do
+    #    printf "${board[$i-1]}" && printf "${board[$i]}" && echo "${board[$i+1]}"
+    #    i=$i+2
+    #done
+    
+   
+  echo "r\c 0 1 2"
+  echo "0   ${board[0]} ${board[1]} ${board[2]}"
+  echo "1   ${board[3]} ${board[4]} ${board[5]}"
+  echo "2   ${board[6]} ${board[7]} ${board[8]}"
 }
+
 function xMove {
     echo -e "${GREEN}Choose your move. Specify the X-Y coordinate you'd like to move, player X. (0,1) ${NC}"
 read -r xCord
@@ -131,7 +139,7 @@ esac
 echo "Creating board..."
 sleep 1
 #TODO: Create the board
-declare -a board=("." "." "." "." "." "." "." "." ".")
+board=(. . . . . . . . .)
 # get length of an boarday
 boardlength=${#board[@]}
 #credit: https://stackoverflow.com/questions/11233825/multi-dimensional-boardays-in-bash
@@ -154,7 +162,7 @@ do
      #works except for this error condition
      #while X not in a certain three positions, then...
      
-    if [ "${board[$1]}" != "." ]  && [ "${board[$1]}" == "${board[$2]}" ] && [ "${board[$2]}" == "${board[$3]}" ];then
+    if [ "${board[$0]}" == "." ]  && [ "${board[$0]}" == "${board[$1]}" ] && [ "${board[$1]}" == "${board[$2]}" ];then
     echo "Game over!"
     echo "Also heres 1 ${board[$1]} and 2 ${board[$2]} and 3 ${board[$3]}"
     fi
